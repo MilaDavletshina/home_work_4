@@ -12,7 +12,7 @@ def name_card(number: str) -> str:
             list_alpha.append(i)
             list_cleaned_alpha = " ".join(list_alpha)
 
-    if "Счет" in list_cleaned_alpha:
+    if "Счет" in list_cleaned_alpha:   # Добавляем маску
         return list_cleaned_alpha + " " + account_mask(number)
     else:
         return list_cleaned_alpha + " " + card_mask(number)
