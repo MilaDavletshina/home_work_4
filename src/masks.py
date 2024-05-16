@@ -27,4 +27,4 @@ def account_mask(number: str) -> str:
         if i.isdigit() and len(i) == 20:
             list_digit.append(i)
             update_digit_account = (len(number[-6:-4]) * "*") + number[-4:]
-            return update_digit_account
+    return update_digit_account
