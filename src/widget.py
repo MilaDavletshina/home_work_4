@@ -1,4 +1,5 @@
 from masks import card_mask, account_mask
+from datetime import datetime
 
 
 def name_card(number: str) -> str:
@@ -14,9 +15,6 @@ def name_card(number: str) -> str:
         return list_cleaned_alpha + " " + account_mask(number)
     else:
         return list_cleaned_alpha + " " + card_mask(number)
-
-
-from datetime import datetime
 
 
 def datetime_str(name: str) -> str:
