@@ -15,10 +15,3 @@ def get_dict(list: str, value: Iterable[str] = "EXECUTED") -> str:
         if i["state"] == value:
             new_dict.append(i)
     return new_dict
-
-
-print(
-    get_dict(
-        list,
-    )
-)
