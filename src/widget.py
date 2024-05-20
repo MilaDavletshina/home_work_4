@@ -4,7 +4,7 @@ from masks import account_mask, card_mask
 
 
 def name_card(number: str) -> str:
-    """Принимает информацию — тип карты и номер карты и возвращает тип карты"""
+    """Принимает информацию — тип карты/счета и номер карты/счета и возвращает тип карты и маску карты/счета"""
     list_alpha = []
     symbols = number.split()
     for i in symbols:
