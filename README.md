@@ -10,4 +10,3 @@
 - В модуле processing.py реализованы две функции:
   - get_dict
   - get_sort_dict
-   
