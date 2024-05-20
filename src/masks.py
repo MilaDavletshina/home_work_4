@@ -15,6 +15,7 @@ def card_mask(number: str) -> str:
                 + (len(list_cleaned_digit[8:12]) * "*")
                 + " "
                 + list_cleaned_digit[-4:]
+                )
     return update_digit_card
 
 
