@@ -15,7 +15,6 @@ def card_mask(number: str) -> str:
                 + (len(list_cleaned_digit[8:12]) * "*")
                 + " "
                 + list_cleaned_digit[-4:]
-            )
     return update_digit_card
 
 
@@ -28,3 +27,7 @@ def account_mask(number: str) -> str:
             list_digit.append(i)
             update_digit_account = (len(number[-6:-4]) * "*") + number[-4:]
     return update_digit_account
+
+
+
+
