@@ -1,4 +1,3 @@
-from processing import get_dict, get_sort_dict
 from widget import datetime_str, name_card
 
 if __name__ == "__main__":
@@ -35,3 +34,4 @@ print(
         ]
     ),
 )
+
