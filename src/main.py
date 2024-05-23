@@ -1,5 +1,5 @@
-from widget import datetime_str, name_card
-from processing import get_dict, get_sort_dict
+from src.widget import datetime_str, name_card
+from src.processing import get_dict, get_sort_dict
 
 
 if __name__ == "__main__":
