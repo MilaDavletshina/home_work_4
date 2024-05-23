@@ -11,6 +11,6 @@ def get_dict(list: str, value: Iterable[str] = "EXECUTED") -> str:
     return new_dict
 
 
-def get_sort_dict(list: [dict[str, object]], ascending=True) -> str:
+def get_sort_dict(list: str, ascending: bool = True) -> str:
     """Функция сортирует по убыванию даты. Второй аргумент необязательный, задает порядок сортировки"""
     return sorted(list, key=lambda x: x.get("date", 0), reverse=ascending)
