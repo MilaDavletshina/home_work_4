@@ -16,8 +16,6 @@ if __name__ == "__main__":
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"}]
     print(get_dict(list,))
 
-
-
     print(
         get_sort_dict(
             [
