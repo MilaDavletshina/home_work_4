@@ -1,5 +1,6 @@
 import pytest
-from src.widget import name_card, datetime_str
+
+from src.widget import datetime_str, name_card
 
 
 @pytest.mark.parametrize(

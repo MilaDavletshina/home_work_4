@@ -1,4 +1,5 @@
 import pytest
+
 from src.processing import get_dict, get_sort_dict
 
 
@@ -85,7 +86,7 @@ def test_get_dict(list, value, expected):
     assert get_dict(list, value) == expected
 
 
-def test_get_sort_dict():
+def test_get_sort_dict_True():
     assert get_sort_dict(
         (
             [
@@ -120,7 +121,7 @@ def test_get_sort_dict():
     ]
 
 
-def test_get_sort_dict():
+def test_get_sort_dict_False():
     assert get_sort_dict(
         (
             [

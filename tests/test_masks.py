@@ -1,4 +1,4 @@
-from src.masks import card_mask, account_mask
+from src.masks import account_mask, card_mask
 
 
 def test_card_mask():
