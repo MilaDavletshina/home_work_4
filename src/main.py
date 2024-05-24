@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     print(datetime_str("2018-07-11T02:26:18.671407"))
 
-    list = [
+    name_dict = [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
         {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     ]
     print(
         get_dict(
-            list,
+            name_dict,
         )
     )
 
