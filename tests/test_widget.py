@@ -21,4 +21,3 @@ def date_str():
 
 def test_datetime_str(date_str):
     assert datetime_str("2018-07-11T02:26:18.671407") == date_str
-
