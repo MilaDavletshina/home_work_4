@@ -13,7 +13,12 @@
   - В модуле `processing.py` реализованы две функции:
     - `get_dict`
     - `get_sort_dict`
+  - В модуле `generators.py` реализованы три функции:
+    - `filter_by_currency`
+    - `transaction_descriptions`
+    - `card_number_generator`
   2) Директория `tests` содержит тесты, для проверки основных функций:
   - Модуль `test_masks`
   - Модуль `test_processing`
   - Модуль `test_widget`
+  - Модуль `test_generators`
