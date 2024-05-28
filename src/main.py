@@ -1,6 +1,6 @@
 from src.widget import datetime_str, name_card
 from src.processing import get_dict, get_sort_dict
-from src.generators import filter_by_currency
+from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
 if __name__ == "__main__":
     # number = input()
@@ -126,7 +126,17 @@ if __name__ == "__main__":
             }
         ]
     )
-    usd_transactions = filter_by_currency(transactions, "RUB")
+    # usd_transactions = filter_by_currency(transactions, "RUB")
+    #
+    # for _ in range(2):
+    #     print(next(usd_transactions)["id"])
 
-    for _ in range(2):
-        print(next(usd_transactions)["id"])
+
+    # descriptions = transaction_descriptions(transactions)
+    #
+    # for _ in range(5):
+    #     print(next(descriptions))
+
+
+    for card_number in card_number_generator(1, 5):
+        print(card_number)
