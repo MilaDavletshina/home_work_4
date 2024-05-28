@@ -16,6 +16,7 @@ def transaction_descriptions(transactions):
 
 
 def card_number_generator(start: int, end: int) -> str:
+    """Функция генерирует номера карт в формате XXXX XXXX XXXX XXXX"""
     for i in count(start):
       if i > end:
         break
