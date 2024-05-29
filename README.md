@@ -22,3 +22,4 @@
   - Модуль `test_processing`
   - Модуль `test_widget`
   - Модуль `test_generators`
+  - Модуль `conftest.py`
