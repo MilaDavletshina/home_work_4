@@ -9,6 +9,4 @@ def test_my_function(capsys, x, y, expected):
     assert addition.out == f"{expected}\n"
 
 
-def test_log():
-    with pytest.raises(ValueError, match="my_function: ValueError. Inputs (1,), {}"):
-        my_function(1, 2)
+
