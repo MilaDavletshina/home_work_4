@@ -6,9 +6,9 @@ from src.widget import datetime_str, name_card
 if __name__ == "__main__":
     number = input()
     print(name_card(number))
-    
+
     print(datetime_str("2018-07-11T02:26:18.671407"))
-    
+
     name_dict = [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -20,7 +20,7 @@ if __name__ == "__main__":
             name_dict,
         )
     )
-    
+
     print(
         get_sort_dict(
             [
@@ -47,7 +47,7 @@ if __name__ == "__main__":
             ]
         ),
     )
-    
+
     transactions = [
         {
             "id": 939719570,
@@ -111,12 +111,12 @@ if __name__ == "__main__":
         },
     ]
     usd_transactions = filter_by_currency(transactions, "RUB")
-    
+
     for _ in range(2):
         print(next(usd_transactions)["id"])
-    
+
     descriptions = transaction_descriptions(transactions)
-    
+
     for _ in range(5):
         print(next(descriptions))
 
