@@ -17,9 +17,11 @@
     - `filter_by_currency`
     - `transaction_descriptions`
     - `card_number_generator`
+  - В модуле `decorators` реализован декораторс `log`
   2) Директория `tests` содержит тесты, для проверки основных функций:
   - Модуль `test_masks`
   - Модуль `test_processing`
   - Модуль `test_widget`
   - Модуль `test_generators`
   - Модуль `conftest.py`
+  - Модуль `test_decorators`
