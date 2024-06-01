@@ -5,7 +5,7 @@ from src.generators import (
 )
 from src.processing import get_dict, get_sort_dict
 from src.widget import datetime_str, name_card
-
+from src.decorators import log
 
 if __name__ == "__main__":
     number = input()
@@ -127,3 +127,10 @@ if __name__ == "__main__":
     for card_number in card_number_generator(1, 5):
         print(card_number)
 
+
+    @log(filename="mylog.txt")
+    def my_function(x, y):
+        return x + y
+
+
+    my_function(1, 2)
