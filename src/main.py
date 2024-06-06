@@ -7,6 +7,7 @@ from src.processing import get_dict, get_sort_dict
 from src.widget import datetime_str, name_card
 from src.decorators import log
 from src.utils import get_finance_transaction
+from src.external_api import get_transaction_amount, get_currency_rate
 
 if __name__ == "__main__":
     number = input()
@@ -137,3 +138,8 @@ if __name__ == "__main__":
     my_function(1, 2)
 
     print(get_finance_transaction('data/operations.json'))
+
+    print(get_transaction_amount({
+        "amount": "2000",
+        "currency": "USD"
+    }))
