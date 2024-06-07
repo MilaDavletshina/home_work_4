@@ -50,4 +50,4 @@ def get_transaction_amount(transaction) -> float:
             return None
 
 
-print(get_transaction_amount({"amount": "2000", "currency": "USD"}))
+print(get_transaction_amount({"amount": "2000", "currency": "RUB"}))
