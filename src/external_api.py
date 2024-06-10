@@ -32,7 +32,7 @@ def get_currency_rate(currency: str) -> float:
 
 
 def get_transaction_amount(transaction) -> float:
-    """Функция принимает транзакцию и возвращает сумме в рублях"""
+    """Функция принимает транзакцию и возвращает сумму в рублях"""
 
     amount = transaction.get("amount")  # отправляем запрос для получения инфы о сумме
     currency = transaction.get(
@@ -50,4 +50,4 @@ def get_transaction_amount(transaction) -> float:
             return None
 
 
-print(get_transaction_amount({"amount": "2000", "currency": "RUB"}))
+print(get_transaction_amount({"amount": "2000", "currency": "USD"}))
