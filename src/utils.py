@@ -1,5 +1,5 @@
 import json
-import external_api
+# import external_api
 
 
 def get_finance_transaction(input_file):
@@ -12,7 +12,7 @@ def get_finance_transaction(input_file):
         return []
 
 
-
+print(get_finance_transaction("data/operations.json"))
 
 
 def get_transaction_amount(transaction) -> float:
