@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from src.external_api import get_currency_rate
 
 
-load_dotenv(".env")
+load_dotenv()
 API_KEY = os.getenv("API_KEY")
 headers = {"apikey": API_KEY}
 

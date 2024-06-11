@@ -1,6 +1,7 @@
 import pytest
 from src.utils import get_finance_transaction
 
+
 def test_get_finance_transaction_empty_input():
     input_file = 'test_empty_file.json'
     with open(input_file, 'w') as file:

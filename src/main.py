@@ -6,15 +6,18 @@ from src.generators import (
 from src.processing import get_dict, get_sort_dict
 from src.widget import datetime_str, name_card
 from src.decorators import log
-from src.utils import get_finance_transaction
-from src.external_api import get_transaction_amount, get_currency_rate
+from src.utils import get_finance_transaction, get_transaction_amount
+
 
 if __name__ == "__main__":
+    # Принимает информацию — тип карты/счета и номер карты/счета и возвращает тип карты и маску карты/счета
     number = input()
     print(name_card(number))
 
+    # Принимает строку и возвращает строку с датой
     print(datetime_str("2018-07-11T02:26:18.671407"))
 
+    # Возвращает новый список, содержащий только те словари, у которых ключ state содержит переданное в функцию знач.
     name_dict = [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -27,6 +30,7 @@ if __name__ == "__main__":
         )
     )
 
+    # Сортирует по убыванию даты
     print(
         get_sort_dict(
             [
@@ -54,6 +58,7 @@ if __name__ == "__main__":
         ),
     )
 
+    # Принимает список словарей с банковскими операциями и возвращает итератор
     transactions = [
         {
             "id": 939719570,
@@ -121,20 +126,29 @@ if __name__ == "__main__":
     for _ in range(2):
         print(next(usd_transactions)["id"])
 
+    # Принимает список словарей и возвращает описание каждой операции по очереди
     descriptions = transaction_descriptions(transactions)
 
     for _ in range(5):
         print(next(descriptions))
 
+    # Генерирует номера карт в формате XXXX XXXX XXXX XXXX
     for card_number in card_number_generator(1, 5):
         print(card_number)
 
+    # Декоратор
     @log(filename="mylog.txt")
     def my_function(x, y):
         return x + y
 
     my_function(1, 2)
 
+    # Принимает json файл и возвращает список словарей о финансовых транзакциях
     print(get_finance_transaction("data/operations.json"))
 
-    print(get_transaction_amount({"amount": "2000", "currency": "USD"}))
+    # Принимает транзакцию и возвращает сумму в рублях
+    transaction = {"amount": "1", "currency": "USD"}
+    amount = get_transaction_amount(transaction)
+    print(amount)
+
+
