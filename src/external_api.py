@@ -17,10 +17,17 @@ def get_currency_rate(currency: str) -> float:
     headers = {"apikey": API_KEY}  # параметр из API документации
     url = f"https://api.apilayer.com/exchangerates_data/latest?base={currency}"  # из API документации
 
-    response = requests.get(url, headers=headers)  # отправляем запрос для получения инфо со страницы
-    parsed_data = json.loads(response.text)  # преобразуем строку json в объект python (данные ввиде текста)
-    currency_rate = parsed_data["rates"]["RUB"]  # берем курс рубля по отношению к запрошенной валюте на сегодня
+    response = requests.get(
+        url, headers=headers
+    )  # отправляем запрос для получения инфо со страницы
+    parsed_data = json.loads(
+        response.text
+    )  # преобразуем строку json в объект python (данные ввиде текста)
+    currency_rate = parsed_data["rates"][
+        "RUB"
+    ]  # берем курс рубля по отношению к запрошенной валюте на сегодня
 
     return currency_rate
+
 
 print(get_currency_rate("USD"))

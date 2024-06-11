@@ -150,5 +150,3 @@ if __name__ == "__main__":
     transaction = {"amount": "1", "currency": "USD"}
     amount = get_transaction_amount(transaction)
     print(amount)
-
-
