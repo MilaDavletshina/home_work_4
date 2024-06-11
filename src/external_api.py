@@ -30,4 +30,4 @@ def get_currency_rate(currency: str) -> float:
     return currency_rate
 
 
-print(get_currency_rate("USD"))
+
