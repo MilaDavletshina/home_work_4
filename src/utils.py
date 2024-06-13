@@ -1,5 +1,5 @@
 import json
-# import external_api
+from external_api import get_currency_rate
 
 
 def get_finance_transaction(input_file):
@@ -12,7 +12,8 @@ def get_finance_transaction(input_file):
         return []
 
 
-print(get_finance_transaction("data/operations.json"))
+
+
 
 
 def get_transaction_amount(transaction) -> float:
@@ -25,7 +26,7 @@ def get_transaction_amount(transaction) -> float:
     if currency == "RUB":
         return float(amount)
     else:
-        exchange_rate = external_api.get_currency_rate(
+        exchange_rate = get_currency_rate(
             currency
         )  # получаем курс валюты из функции currency_rate
         if exchange_rate:
