@@ -28,6 +28,3 @@ def get_currency_rate(currency: str) -> float:
     ]  # берем курс рубля по отношению к запрошенной валюте на сегодня
 
     return currency_rate
-
-
-

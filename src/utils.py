@@ -8,12 +8,8 @@ def get_finance_transaction(input_file):
         with open(input_file) as file:
             operations = json.load(file)
             return operations
-    except:
+    except ValueError:
         return []
-
-
-
-
 
 
 def get_transaction_amount(transaction) -> float:
@@ -33,6 +29,3 @@ def get_transaction_amount(transaction) -> float:
             return exchange_rate * float(amount)
         else:
             return None
-
-
-
