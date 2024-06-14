@@ -26,11 +26,14 @@ def card_mask(number: str) -> str:
                 + " "
                 + list_cleaned_digit[-4:]
             )
-    logger.info(f'Возвращена маска введенного номера карты: {update_digit_card}')
-    return update_digit_card
+            logger.info(f'Возвращена маска введенного номера карты: {update_digit_card}'
+            return update_digit_card
+        else:
+            logger.error('Ошибка ввода! Проверьте номер карты')
+            return (f'Ошибка ввода. Введите номер карты еще раз')
 
-# number = input()
-# print(card_mask(number))
+
+
 
 def account_mask(number: str) -> str:
     """Принимает номер счета и возвращает его маску"""
@@ -38,7 +41,14 @@ def account_mask(number: str) -> str:
     symbols = number.split()
     for i in symbols:
         if i.isdigit() and len(i) == 20:
+            logger.info(f'Введен верный формат номера счета: {symbols}')
             list_digit.append(i)
             update_digit_account = (len(number[-6:-4]) * "*") + number[-4:]
-    return update_digit_account
+            logger.info(f'Возвращена маска введенного номера счета: {update_digit_account}')
+            return update_digit_account
+        else:
+            logger.error('Ошибка ввода! Проверьте номер счета')
+            return (f'Ошибка ввода. Введите номер счета еще раз')
+
+
 
