@@ -1,16 +1,10 @@
-from src.generators import (
-    card_number_generator,
-    filter_by_currency,
-    transaction_descriptions,
-)
-from src.processing import get_dict, get_sort_dict
-from widget import datetime_str, name_card
-from masks import card_mask, account_mask
+from masks import account_mask, card_mask
 from src.decorators import log
-from utils import (get_finance_transaction, get_transaction_amount)
-
-
-
+from src.generators import (card_number_generator, filter_by_currency,
+                            transaction_descriptions)
+from src.processing import get_dict, get_sort_dict
+from utils import get_finance_transaction, get_transaction_amount
+from widget import datetime_str, name_card
 
 if __name__ == "__main__":
     # Принимает номер карты и возвращает ее маску
