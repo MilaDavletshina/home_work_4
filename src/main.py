@@ -5,7 +5,8 @@
 #     transaction_descriptions,
 # )
 # from src.processing import get_dict, get_sort_dict
-# from src.widget import datetime_str, name_card
+# from widget import datetime_str, name_card
+from masks import card_mask
 # from src.decorators import log
 # from utils import (get_finance_transaction, get_transaction_amount)
 
@@ -13,8 +14,12 @@
 
 
 if __name__ == "__main__":
-    # # Принимает информацию — тип карты/счета и номер карты/счета и возвращает тип карты и маску карты/счета
-    # number = input()
+    # Принимает номер карты и возвращает ее маску
+    number = input("Введите номер: ")
+    print(card_mask(number))
+
+    # Принимает информацию — тип карты/счета и номер карты/счета и возвращает тип карты и маску карты/счета
+    # number = input("Введите данные: ")
     # print(name_card(number))
     #
     # # Принимает строку и возвращает строку с датой
