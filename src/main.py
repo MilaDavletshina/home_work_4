@@ -5,6 +5,7 @@ from src.generators import (card_number_generator, filter_by_currency,
 from src.processing import get_dict, get_sort_dict
 from utils import get_finance_transaction, get_transaction_amount
 from widget import datetime_str, name_card
+from transactions import read_transaction_csv, read_transaction_xlsx
 
 if __name__ == "__main__":
     # Принимает номер карты и возвращает ее маску
@@ -155,3 +156,11 @@ if __name__ == "__main__":
     transaction = {"amount": "200", "currency": "USD"}
     amount = get_transaction_amount(transaction)
     print(amount)
+
+    # Считывание финансовых операций из csv файла
+    input_file_csv = 'data/transactions.csv'
+    print(read_transaction_csv(input_file_csv))
+
+    # Считывание финансовых операций из xlsx файла
+    input_file_xlsx = "data/transactions_excel.xlsx"
+    print(read_transaction_xlsx(input_file_xlsx))
