@@ -1,7 +1,7 @@
 import json
 import logging
 
-from external_api import get_currency_rate
+from src.external_api import get_currency_rate
 
 logging.basicConfig(
     level=logging.INFO,

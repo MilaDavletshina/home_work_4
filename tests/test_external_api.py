@@ -14,7 +14,7 @@ headers = {"apikey": API_KEY}
 
 @patch("requests.get")
 def test_get_currency_rate(mock_get):
-    mock_get.return_value.json.return_value = json.dumps(
+    mock_get.return_value.text = json.dumps(
         {
             "base": "EUR",
             "date": "2024-06-10",
