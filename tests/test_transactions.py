@@ -24,7 +24,7 @@ def test_read_transaction_csv(mock_reader):
          'Счет 39745660563456619397', 'Перевод организации'},
     ]
     mock_reader.return_value = iter(test_data)
-    result = read_transaction_csv('data/transactions.csv')
+    result = read_transaction_csv('test.csv')
     test_data.pop(0)
     assert result == test_data
     mock_reader.assert_called_once()
