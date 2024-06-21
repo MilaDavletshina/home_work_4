@@ -1,7 +1,7 @@
 import json
 import logging
 
-from src.external_api import get_currency_rate
+from external_api import get_currency_rate
 
 logging.basicConfig(
     level=logging.INFO,
@@ -23,6 +23,9 @@ def get_finance_transaction(input_file):
     except ValueError:
         logger.error("Список словарей не загружен - данные в файле отсутствуют")
         return []
+
+
+print(get_finance_transaction("data/operations.json"))
 
 
 def get_transaction_amount(transaction) -> float:
