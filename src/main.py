@@ -1,11 +1,15 @@
 from masks import account_mask, card_mask
 from src.decorators import log
-from src.generators import (card_number_generator, filter_by_currency,
-                            transaction_descriptions)
+from src.generators import (
+    card_number_generator,
+    filter_by_currency,
+    transaction_descriptions,
+)
 from src.processing import get_dict, get_sort_dict
 from transactions import read_transaction_csv, read_transaction_xlsx
 from utils import get_finance_transaction, get_transaction_amount
 from widget import datetime_str, name_card
+from filter import get_list_of_dict
 
 if __name__ == "__main__":
     # Принимает номер карты и возвращает ее маску
@@ -164,3 +168,13 @@ if __name__ == "__main__":
     # Считывание финансовых операций из xlsx файла
     input_file_xlsx = "data/transactions_excel.xlsx"
     print(read_transaction_xlsx(input_file_xlsx))
+
+    # Функция возращает список словарей по заданной пользователем операции
+    search_bar = input("Введите банковскую операцию: ")
+    list_transaction = get_finance_transaction("data/operations.json")
+    print(get_list_of_dict(list_transaction, search_bar))
+
+    # Функция возвращает колчество операций по заданной категории
+    description = input("Введите категорию банковской операции: ")
+    list_transaction = get_finance_transaction("data/operations.json")
+    print(get_list_of_dict_by_description(list_transaction, description))

@@ -26,7 +26,6 @@ def get_finance_transaction(input_file):
         return []
 
 
-
 def get_transaction_amount(transaction) -> float:
     """Функция принимает транзакцию и возвращает сумму в рублях"""
 
