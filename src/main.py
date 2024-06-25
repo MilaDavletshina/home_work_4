@@ -46,8 +46,8 @@ def main() -> None:
 
     while True:
         print(
-            """Введите статус, по которому необходимо выполнить фильтрацию. 
-        Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING
+        """Введите статус, по которому необходимо выполнить фильтрацию.
+        Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING 
         """
         )
         status = input("Введите выбранный статус: ").upper()
@@ -130,40 +130,40 @@ def main() -> None:
     else:
         print(f"Всего банковских операций в выборке: {len(transaction)}")
 
-        for key, value in filter_by_selection:
-            if key == "format_json":
-                for item in transaction:
-                    from_card = name_card((item["from"]))
-                    to_card = name_card((item["to"]))
-                    date = datetime_str(item["date"])
-                    description = item["description"]
-                    amount = item["operationAmount"]["amount"]
-                    currency = item["operationAmount"]["currency"]["name"]
+    for key, value in filter_by_selection:
+        if key == "format_json":
+            for item in transaction:
+                from_card = name_card((item["from"]))
+                to_card = name_card((item["to"]))
+                date = datetime_str(item["date"])
+                description = item["description"]
+                amount = item["operationAmount"]["amount"]
+                currency = item["operationAmount"]["currency"]["name"]
 
-            elif key == "format_csv":
-                for item in transaction:
-                    from_card = name_card((item["from"]))
-                    to_card = name_card((item["to"]))
-                    date = datetime_str(item["date"])
-                    description = item["description"]
-                    amount = item["amount"]
-                    currency = item["currency_code"]
+        elif key == "format_csv":
+            for item in transaction:
+                from_card = name_card((item["from"]))
+                to_card = name_card((item["to"]))
+                date = datetime_str(item["date"])
+                description = item["description"]
+                amount = item["amount"]
+                currency = item["currency_code"]
 
-            elif key == "format_excel":
-                for item in transaction:
-                    from_card = name_card((item["from"]))
-                    to_card = name_card((item["to"]))
-                    date = datetime_str(item["date"])
-                    description = item["description"]
-                    amount = item["amount"]
-                    currency = item["currency_code"]
+        elif key == "format_excel":
+            for item in transaction:
+                from_card = name_card((item["from"]))
+                to_card = name_card((item["to"]))
+                date = datetime_str(item["date"])
+                description = item["description"]
+                amount = item["amount"]
+                currency = item["currency_code"]
 
-            if description == "Открытие вклада":
-                print(f"{date} {description}\n{from_card}\nСумма: {amount} {currency}")
-            else:
-                print(
-                    f"{date} {description}\n{from_card} -> {to_card}\nСумма: {amount} {currency}"
-                )
+        if description == "Открытие вклада":
+            print(f"{date} {description}\n{to_card}\nСумма: {amount} {currency}")
+        else:
+            print(
+                f"{date} {description}\n{from_card} -> {to_card}\nСумма: {amount} {currency}"
+            )
 
 
 if __name__ == "__main__":
