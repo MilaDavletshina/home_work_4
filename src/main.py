@@ -12,11 +12,13 @@ def main() -> None:
     print("Привет! Добро пожаловать в программу работы с банковскими транзакциями.")
     print()
     while True:
-        print('''Выберите необходимый пункт меню:
+        print(
+            """Выберите необходимый пункт меню:
         1. Получить информацию о транзакциях из JSON-файла
         2. Получить информацию о транзакциях из CSV-файла
         3. Получить информацию о транзакциях из XLSX-файла
-        ''')
+        """
+        )
         menu_item = input("Введите выбранный пункт меню: ")
         print()
 
@@ -43,9 +45,11 @@ def main() -> None:
             continue
 
     while True:
-        print('''Введите статус, по которому необходимо выполнить фильтрацию. 
+        print(
+            """Введите статус, по которому необходимо выполнить фильтрацию. 
         Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING
-        ''')
+        """
+        )
         status = input("Введите выбранный статус: ").upper()
         print()
         if status in ["EXECUTED", "CANCELED", "PENDING"]:
@@ -58,7 +62,9 @@ def main() -> None:
     while True:
         sort_by_data = input("Отсортировать операции по дате? Да/Нет: ").lower()
         if sort_by_data == "да":
-            sort_metod = input("Отсортировать по возрастанию или по убыванию?: ").lower()
+            sort_metod = input(
+                "Отсортировать по возрастанию или по убыванию?: "
+            ).lower()
             if sort_metod == "по возрастанию":
                 filter_by_selection.append(("date", False))
                 break
@@ -72,7 +78,9 @@ def main() -> None:
             continue
 
     while True:
-        sort_by_transactions = input("Выводить только рублевые тразакции? Да/Нет: ").lower()
+        sort_by_transactions = input(
+            "Выводить только рублевые тразакции? Да/Нет: "
+        ).lower()
         if sort_by_transactions == "да":
             if menu_item == "1":
                 filter_by_selection.append(("currency", "RUB"))
@@ -86,7 +94,9 @@ def main() -> None:
             continue
 
     while True:
-        sort_by_word = input("Отфильтровать список транзакций по определенному слову в описании? Да/Нет: ").lower()
+        sort_by_word = input(
+            "Отфильтровать список транзакций по определенному слову в описании? Да/Нет: "
+        ).lower()
         if sort_by_word == "да":
             search_word = input("Введите слово для фильтрации: ")
             filter_by_selection.append(("description", search_word))
@@ -109,7 +119,9 @@ def main() -> None:
         elif key == "currency":
             transaction = filter_by_currency(transaction, value)
         elif key == "currency_code":
-            transaction = [item for item in transaction if item["currency_code"] == value]
+            transaction = [
+                item for item in transaction if item["currency_code"] == value
+            ]
 
     print("Распечатываю итоговый список транзакций...")
 
@@ -149,12 +161,10 @@ def main() -> None:
             if description == "Открытие вклада":
                 print(f"{date} {description}\n{from_card}\nСумма: {amount} {currency}")
             else:
-                print(f"{date} {description}\n{from_card} -> {to_card}\nСумма: {amount} {currency}")
+                print(
+                    f"{date} {description}\n{from_card} -> {to_card}\nСумма: {amount} {currency}"
+                )
 
 
 if __name__ == "__main__":
     main()
-
-
-
-

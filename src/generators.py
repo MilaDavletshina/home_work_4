@@ -7,6 +7,7 @@ def filter_by_currency(transactions, currency):
         if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
 
+
 # transactions = [
 #         {
 #             "id": 939719570,
@@ -74,15 +75,18 @@ def filter_by_currency(transactions, currency):
 # for _ in range(2):
 #     print(next(usd_transactions)["id"])
 
+
 def transaction_descriptions(transactions):
     """Функция принимает список словарей и возвращает описание каждой операции по очереди"""
     for transaction in transactions:
         yield transaction["description"]
 
+
 # descriptions = transaction_descriptions(transactions)
 #
 # for _ in range(5):
 #     print(next(descriptions))
+
 
 def card_number_generator(start: int, end: int) -> str:
     """Функция генерирует номера карт в формате XXXX XXXX XXXX XXXX"""
@@ -92,6 +96,8 @@ def card_number_generator(start: int, end: int) -> str:
         yield "{:04d} {:04d} {:04d} {:04d}".format(
             (i // 1000) % 10, (i // 100) % 10, (i // 10) % 10, i % 10
         )
+
+
 # for card_number in card_number_generator(1, 5):
 #     print(card_number)
 #       my_function(1, 2)

@@ -3,6 +3,7 @@ from datetime import datetime
 from masks import account_mask, card_mask
 from utils import get_finance_transaction
 
+
 def name_card(number: str) -> str:
     """Принимает информацию — тип карты/счета и номер карты/счета и возвращает тип карты и маску карты/счета"""
     list_alpha = []
@@ -19,14 +20,17 @@ def name_card(number: str) -> str:
     else:
         return list_cleaned_alpha + " " + card_mask(number)
 
+
 # number = input("Введите данные: ")
 # print(name_card(number))
+
 
 def datetime_str(name: str) -> str:
     """Принимает строку и возвращает строку с датой"""
     # date_obj = datetime.strptime(name, "%Y-%m-%dt%H:%M:%S.%f")
     # return date_obj.strftime("%d.%m.%Y")
     return str(datetime.strptime(name.split("T")[0], "%Y-%m-%d").strftime("%d.%m.%Y"))
+
 
 # print(datetime_str("2018-07-11T02:26:18.671407"))
 

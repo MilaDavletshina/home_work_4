@@ -1,7 +1,6 @@
 import logging
 
 
-
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(filename)s - %(levelname)s: %(message)s",
@@ -38,8 +37,10 @@ def card_mask(number: str) -> str:
         #     logger.error("Ошибка ввода! Проверьте номер карты")
         #     return f"Ошибка ввода. Введите номер карты еще раз"
 
+
 # number = input("Введите номер карты: ")
 # print(card_mask(number))
+
 
 def account_mask(number: str) -> str:
     """Принимает номер счета и возвращает его маску"""
@@ -57,6 +58,7 @@ def account_mask(number: str) -> str:
         # else:
         #     logger.error("Ошибка ввода! Проверьте номер счета")
         #     return f"Ошибка ввода. Введите номер счета еще раз"
+
 
 # number = input("Введите номер счета: ")
 # print(account_mask(number))
