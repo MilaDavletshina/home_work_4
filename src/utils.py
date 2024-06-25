@@ -25,6 +25,7 @@ def get_finance_transaction(input_file):
         logger.error("Список словарей не загружен - данные в файле отсутствуют")
         return []
 
+# print(get_finance_transaction("data/operations.json"))
 
 def get_transaction_amount(transaction) -> float:
     """Функция принимает транзакцию и возвращает сумму в рублях"""
@@ -45,3 +46,7 @@ def get_transaction_amount(transaction) -> float:
             return exchange_rate * float(amount)
         else:
             return None
+
+# transaction = {"amount": "200", "currency": "USD"}
+# amount = get_transaction_amount(transaction)
+# print(amount)
