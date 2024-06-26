@@ -33,9 +33,9 @@ def card_mask(number: str) -> str:
                 f"Возвращена маска введенного номера карты: {update_digit_card}"
             )
             return update_digit_card
-        # else:
-        #     logger.error("Ошибка ввода! Проверьте номер карты")
-        #     return f"Ошибка ввода. Введите номер карты еще раз"
+        else:
+            logger.error("Ошибка ввода! Проверьте номер карты")
+            return f"Ошибка ввода. Введите номер карты еще раз"
 
 
 # number = input("Введите номер карты: ")
@@ -55,9 +55,9 @@ def account_mask(number: str) -> str:
                 f"Возвращена маска введенного номера счета: {update_digit_account}"
             )
             return update_digit_account
-        # else:
-        #     logger.error("Ошибка ввода! Проверьте номер счета")
-        #     return f"Ошибка ввода. Введите номер счета еще раз"
+        else:
+            logger.error("Ошибка ввода! Проверьте номер счета")
+            return f"Ошибка ввода. Введите номер счета еще раз"
 
 
 # number = input("Введите номер счета: ")
