@@ -4,7 +4,7 @@ from processing import get_dict, get_sort_dict
 from filter import get_list_of_dict
 from widget import name_card, datetime_str
 from generators import filter_by_currency
-
+from collections import Counter
 
 def main() -> None:
     filter_by_selection = []  # отфильтрованный список пользователя
@@ -108,6 +108,8 @@ def main() -> None:
             continue
 
     transaction = list_transaction
+    for i in transaction:
+        counted = Counter(i)
 
     for key, value in filter_by_selection:
         if key == "status":
@@ -128,8 +130,8 @@ def main() -> None:
     if not transaction:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
     else:
-        print(f"Всего банковских операций в выборке: {len(transaction)}")
-
+        # print(f"Всего банковских операций в выборке: {len(transaction)}")
+        print(f"Всего банковских операций в выборке: {counted.items()}")
     for key, value in filter_by_selection:
         if key == "format_json":
             for item in transaction:
